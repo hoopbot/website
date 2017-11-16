@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+body, html {
+  $dark-red: #ee4649;
+  $light-red: #f46647;
+  min-height: 100vh;
+
+  // Background
+  background: linear-gradient(to bottom right, $dark-red, $light-red);
+  background-repeat: repeat-x;
+}
