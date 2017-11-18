@@ -1,0 +1,39 @@
+.welcome-page {
+  width: 100%;
+  text-align: center;
+  padding: 32px 0;
+}
+
+h1 {
+  font-family: 'Changa One', "Helvetica Neue", Helvetica Neue, Arial, sans-serif;
+  font-size: 32px;
+}
+
+h2 {
+  margin-top: 0;
+  font-style: italic;
+}
+
+.download-icons {
+  max-width: 600px;
+  max-height: 200px;
+  display: flex;
+  margin: 0 auto;
+  div {
+    padding: 16px;
+    flex: auto;
+    width: 100%;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .ios {
+    opacity: 0.05;
+  }
+  .android {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
