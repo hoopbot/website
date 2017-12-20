@@ -18,6 +18,7 @@ import {WelcomeComponent} from './pages/welcome/welcome.component';
 import {PrivacyPolicyComponent} from './pages/privacy-policy/privacy-policy.component';
 import {HowToPlayComponent} from './pages/how-to-play/how-to-play.component';
 import {AboutUsComponent} from './pages/about-us/about-us.component';
+import {DownloadComponent} from './pages/download/download.component';
 
 /**
  * Side menu service
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'how-to-play', component: HowToPlayComponent},
   {path: 'privacy-policy', component: PrivacyPolicyComponent},
-  {path: 'about-us', component: AboutUsComponent}
+  {path: 'about-us', component: AboutUsComponent},
+  {path: 'download', component: DownloadComponent}
 ];
 
 
@@ -43,7 +45,8 @@ const appRoutes: Routes = [
     PrivacyPolicyComponent,
     SideMenuComponent,
     HowToPlayComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    DownloadComponent
   ],
   imports: [
     BrowserModule,
