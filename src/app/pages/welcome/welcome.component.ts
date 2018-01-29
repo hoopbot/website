@@ -1,11 +1,31 @@
-import {Component} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {DeviceService} from "../../services/device/device.service";
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent {
+export class WelcomeComponent implements OnInit {
+
+  /**
+   * Is mobile?
+   * @type {boolean}
+   * @public
+   */
+  public isMobile = false;
+
+  /**
+   * Constructor
+   * @param {DeviceService} _device
+   * @public
+   */
+  constructor(@Inject(DeviceService) private _device: DeviceService) {
+  }
+
+  ngOnInit() {
+    this.isMobile = this._device.isMobile;
+  }
 
   /**
    * Open Google Play store link

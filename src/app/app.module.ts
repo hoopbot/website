@@ -26,6 +26,7 @@ import {DownloadComponent} from './pages/download/download.component';
 import {ToggleSideMenuService} from './services/toggle-side-menu/toggle-side-menu.service';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import {DeviceService} from "./services/device/device.service";
 
 /**
  * App routes
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes)
   ],
   providers: [
-    ToggleSideMenuService
+    ToggleSideMenuService,
+    DeviceService
   ],
   bootstrap: [AppComponent]
 })
