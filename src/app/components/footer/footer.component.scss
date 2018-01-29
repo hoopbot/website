@@ -1,0 +1,27 @@
+.footer {
+  $footer-height: 60px;
+  position: fixed;
+  height: $footer-height;
+  line-height: $footer-height;
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  .links-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    font-size: 14px;
+    &:hover {
+      cursor: pointer;
+    }
+    .separator {
+      flex: 1 1 auto;
+    }
+    .link {
+      padding: 0 16px;
+      text-align: center;
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ToggleSideMenuService} from './services/toggle-side-menu/toggle-side-menu.service';
 import {Inject} from '@angular/core';
 
@@ -7,24 +7,28 @@ import {Inject} from '@angular/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  // Side menu is open?
-  sideMenuIsOpen: boolean;
+export class AppComponent implements OnInit {
+
+  /**
+   * sideMenuIsOpen
+   * @type {boolean}
+   * @public
+   */
+  public sideMenuIsOpen = false;
 
   /**
    * Constructor
    * @param {ToggleSideMenuService} _toggleSideMenuService
    */
   constructor(@Inject(ToggleSideMenuService) private _toggleSideMenuService: ToggleSideMenuService) {
-    // Subscribe to side menu toggle service
-    this._subscribeToToggle();
   }
 
   /**
-   * Subscribe to sideMenuToggle
-   * @private
+   * On init
+   * @method ngOnInit
+   * @public
    */
-  private _subscribeToToggle() {
+  public ngOnInit(): void {
     this._toggleSideMenuService.sideMenuIsOpen.subscribe(sideMenuIsOpen => {
       this.sideMenuIsOpen = sideMenuIsOpen;
     });
@@ -32,8 +36,10 @@ export class AppComponent {
 
   /**
    * Toggle side menu
+   * @method toggleSideMenu
+   * @public
    */
-  toggleSideMenu() {
+  public toggleSideMenu(): void {
     this._toggleSideMenuService.toggleSideMenu();
   }
 }

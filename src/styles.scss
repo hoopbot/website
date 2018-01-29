@@ -1,21 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css?family=Changa+One');
-@import url('https://fonts.googleapis.com/css?family=Arimo:400,400i,700,700i');
-
-
 html {
   min-height: 100%;
   margin: 0;
   padding: 0;
 
-  // Background
+  background: #f61b49;
+}
+
+@media only screen and (max-width: 669px) {
   background: white;
-  background-repeat: repeat-x;
+}
+
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; /* Webkit */
+  -moz-user-select: none;    /* Firefox */
+  -ms-user-select: none;     /* IE 10  */
+
+  /* Currently not supported in Opera but will be soon */
+  -o-user-select: none;
+  user-select: none;
 }
 
 body {
   margin: 0;
-  font-family: 'Arimo', "Helvetica Neue", Helvetica Neue, Helvetica, Verdana, sans-serif;
+  font-family: "Helvetica Neue", Helvetica Neue, Helvetica, Verdana, sans-serif;
 }
 
 // Fuck the outline

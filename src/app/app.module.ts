@@ -24,6 +24,8 @@ import {DownloadComponent} from './pages/download/download.component';
  * Side menu service
  */
 import {ToggleSideMenuService} from './services/toggle-side-menu/toggle-side-menu.service';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 /**
  * App routes
@@ -46,7 +48,9 @@ const appRoutes: Routes = [
     SideMenuComponent,
     HowToPlayComponent,
     AboutUsComponent,
-    DownloadComponent
+    DownloadComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

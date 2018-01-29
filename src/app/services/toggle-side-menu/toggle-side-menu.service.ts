@@ -3,20 +3,20 @@ import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class ToggleSideMenuService {
-  // Behaviour subject
-  private _sideMenuIsOpen: BehaviorSubject<boolean>;
 
   /**
-   * Constructor
+   * Side menu is open
+   * @type {BehaviorSubject<boolean>}
+   * @private
    */
-  constructor() {
-    this._sideMenuIsOpen = new BehaviorSubject(false);
-  }
+  private _sideMenuIsOpen: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
   /**
    * Toggle side menu
+   * @method toggleSideMenu
+   * @public
    */
-  public toggleSideMenu() {
+  public toggleSideMenu(): void {
     if (this._sideMenuIsOpen.getValue() === true) {
       this._sideMenuIsOpen.next(false);
     } else {
@@ -27,8 +27,9 @@ export class ToggleSideMenuService {
   /**
    * Getter for sideMenuIsOpen boolean
    * @returns {BehaviorSubject<boolean>}
+   * @public
    */
-  get sideMenuIsOpen(): BehaviorSubject<boolean> {
+  public get sideMenuIsOpen(): BehaviorSubject<boolean> {
     return this._sideMenuIsOpen;
   }
 
