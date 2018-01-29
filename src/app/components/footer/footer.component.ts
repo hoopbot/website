@@ -13,8 +13,12 @@ export class FooterComponent {
    * @method openLink
    * @public
    */
-  public openLink(url: string): void {
-    window.open(url, '_blank');
+  public openLink(url: string, blank?: boolean): void {
+    if (blank === false) {
+      window.open(url, '_self');
+    } else {
+      window.open(url, '_blank');
+    }
   }
 
 }
