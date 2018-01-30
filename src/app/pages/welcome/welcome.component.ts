@@ -1,12 +1,12 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {DeviceService} from "../../services/device/device.service";
+import {Component, Inject, OnDestroy, OnInit} from '@angular/core';
+import {DeviceService} from '../../services/device/device.service';
 
 @Component({
   selector: 'app-welcome',
   templateUrl: './welcome.component.html',
   styleUrls: ['./welcome.component.scss']
 })
-export class WelcomeComponent implements OnInit {
+export class WelcomeComponent implements OnInit, OnDestroy {
 
   /**
    * Is mobile?
@@ -14,6 +14,13 @@ export class WelcomeComponent implements OnInit {
    * @public
    */
   public isMobile = false;
+
+  /**
+   * Device type (iOS or Android)
+   * @type {string}
+   * @public
+   */
+  public device = 'unkown';
 
   /**
    * Constructor
@@ -25,6 +32,9 @@ export class WelcomeComponent implements OnInit {
 
   ngOnInit() {
     this.isMobile = this._device.isMobile;
+    this.device = this._device.os;
+    document.getElementById('footer').style.position = 'fixed';
+    document.getElementsByTagName('body')[0].style.backgroundColor = '#f61b49';
   }
 
   /**
@@ -43,6 +53,11 @@ export class WelcomeComponent implements OnInit {
    */
   public openiOS() {
     window.open('https://itunes.apple.com/us/app/hoopbot/id1313728649');
+  }
+
+  ngOnDestroy() {
+    document.getElementById('footer').style.position = 'relative';
+    document.getElementsByTagName('body')[0].style.backgroundColor = 'white';
   }
 
 }

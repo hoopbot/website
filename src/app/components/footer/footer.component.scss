@@ -1,6 +1,6 @@
 .footer {
   $footer-height: 80px;
-  position: fixed;
+  position: relative;
   height: $footer-height;
   line-height: $footer-height;
   background: #dd1a41;
@@ -31,6 +31,24 @@
     }
     .link.app {
       padding: 0 8px;
+    }
+  }
+}
+
+.footer.mobile {
+  height: inherit;
+  .links-container {
+    padding-left: 0;
+    .link {
+      flex: 1 1 auto;
+      padding: 0;
+    }
+    .link.app {
+      display: none;
+    }
+    .social {
+      flex: 0 0 50px;
+      font-size: 28px;
     }
   }
 }

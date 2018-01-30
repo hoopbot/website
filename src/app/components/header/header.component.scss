@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
   width: 100%;
+  background: #f61b49;
   .links-container {
     padding: 0 64px;
     margin: 0 auto;
@@ -32,6 +33,18 @@
       &:hover {
         cursor: pointer;
       }
+    }
+  }
+}
+
+.header.mobile {
+  height: 68px;
+  .links-container {
+    .link {
+      display: none;
+    }
+    .separator {
+      display: none;
     }
   }
 }

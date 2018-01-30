@@ -1,11 +1,30 @@
-import {Component} from '@angular/core';
+import {Component, Inject, OnInit} from '@angular/core';
+import {DeviceService} from "../../services/device/device.service";
 
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit {
+
+  /**
+   * Is mobile?
+   * @type {boolean}
+   * @public
+   */
+  public isMobile = false;
+
+  /**
+   * Constructor
+   * @param {DeviceService} _device
+   */
+  constructor(@Inject(DeviceService) private _device: DeviceService) {
+  }
+
+  ngOnInit() {
+    this.isMobile = this._device.isMobile;
+  }
 
   /**
    * Open link

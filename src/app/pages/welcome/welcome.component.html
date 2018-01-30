@@ -2,12 +2,16 @@
   <div class="blurb-container">
     <h1>Predict NBA games Daily. It's free.</h1>
     <ul>
-      <li>Tap on the team you think will win</li>
-      <li>Climb the leaderboard and win prizes</li>
-      <li>Play against friends</li>
+      <li>Tap on the team you think will win,</li>
+      <li>climb the leaderboard and win prizes.</li>
+      <li>Play against friends.</li>
     </ul>
   </div>
-  <div class="phone-container">
+  <div class="phone-container" *ngIf="!isMobile">
     <img src="../../../assets/img/screenshot.png" />
+  </div>
+  <div class="download-image">
+    <img (click)="openiOS()" src="../../../assets/img/badge-app-store.svg" *ngIf="device === 'ios'" />
+    <img (click)="openAndroid()" src="../../../assets/img/badge-google-play.svg" *ngIf="device === 'android'" />
   </div>
 </div>
